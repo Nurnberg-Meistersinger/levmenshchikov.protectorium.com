@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Security Products Should Not Panic / Lev Menshchikov</title>
+    <meta name="description" content="A short note by Lev Menshchikov on why calm interfaces matter in high-pressure security tools." />
+    <link rel="icon" href="/images/protectorium-logo.png" type="image/png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      (function () {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          document.documentElement.setAttribute("data-theme", "dark");
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="page-shell page-shell--narrow">
+      <header class="site-header">
+        <nav class="site-nav" aria-label="Primary">
+          <div class="site-nav-links">
+            <a class="nav-link" href="/#profile">Profile</a>
+            <a class="nav-link" href="/#experience">Experience</a>
+            <a class="nav-link" href="/#publications">Publications</a>
+            <a class="nav-link" href="/#blog">Blog</a>
+          </div>
+          <a class="nav-cta" href="/#contact">Contact</a>
+          <button class="theme-btn" id="theme-toggle" aria-label="Toggle colour theme">
+            <svg class="icon-sun" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <circle cx="7.5" cy="7.5" r="2.6" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M7.5 1.5v1.2M7.5 12.3v1.2M1.5 7.5h1.2M12.3 7.5h1.2M3.4 3.4l.85.85M10.75 10.75l.85.85M3.4 11.6l.85-.85M10.75 4.25l.85-.85" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            <svg class="icon-moon" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <path d="M12.5 9.5A5.5 5.5 0 0 1 6 3a5 5 0 1 0 6.5 6.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </nav>
+      </header>
+
+      <main>
+        <article class="article-shell">
+          <p class="article-meta">Essay</p>
+          <h1>Security products should not panic</h1>
+
+          <div class="article-body">
+            <p>
+              A lot of security software mistakes urgency for usefulness. It
+              gets loud, throws warnings everywhere, paints the interface red,
+              and asks the operator to carry the cognitive load of sorting
+              signal from theater. In a quiet demo that can look impressive. In
+              a tense moment it mostly creates drag.
+            </p>
+
+            <p>
+              Calm interfaces do not mean passive interfaces. They mean the
+              system has already done the work of ordering information, exposing
+              confidence, and making the next useful action obvious. The person
+              using the tool should not have to decode the mood of the product
+              before they can understand the state of the incident.
+            </p>
+
+            <p>
+              This is especially important in products that sit between humans,
+              risk, and evidence. If the workflow is already ambiguous, visual
+              noise makes it worse. If the workflow is verifiable, the interface
+              should reflect that confidence: less drama, more sequence, more
+              legibility under pressure.
+            </p>
+
+            <p>
+              Calm is not a branding choice. It is an operational feature. It
+              changes how quickly people orient, how often they second-guess the
+              system, and how much trust they can place in the output when the
+              stakes are real.
+            </p>
+          </div>
+        </article>
+      </main>
+    </div>
+    <script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        var html = document.documentElement;
+        btn.addEventListener("click", function () {
+          var dark = html.getAttribute("data-theme") === "dark";
+          html.setAttribute("data-theme", dark ? "light" : "dark");
+          localStorage.setItem("theme", dark ? "light" : "dark");
+        });
+      })();
+    </script>
+  </body>
+</html>

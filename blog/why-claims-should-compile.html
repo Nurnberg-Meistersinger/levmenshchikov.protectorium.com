@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Why Claims Should Compile / Lev Menshchikov</title>
+    <meta name="description" content="A short note by Lev Menshchikov on why cyber insurance claims should become protocol-driven." />
+    <link rel="icon" href="/images/protectorium-logo.png" type="image/png" />
+    <link rel="stylesheet" href="/styles.css" />
+    <script>
+      (function () {
+        var t = localStorage.getItem("theme");
+        if (t) document.documentElement.setAttribute("data-theme", t);
+        else if (window.matchMedia("(prefers-color-scheme: dark)").matches)
+          document.documentElement.setAttribute("data-theme", "dark");
+      })();
+    </script>
+  </head>
+  <body>
+    <div class="page-shell page-shell--narrow">
+      <header class="site-header">
+        <nav class="site-nav" aria-label="Primary">
+          <div class="site-nav-links">
+            <a class="nav-link" href="/#profile">Profile</a>
+            <a class="nav-link" href="/#experience">Experience</a>
+            <a class="nav-link" href="/#publications">Publications</a>
+            <a class="nav-link" href="/#blog">Blog</a>
+          </div>
+          <a class="nav-cta" href="/#contact">Contact</a>
+          <button class="theme-btn" id="theme-toggle" aria-label="Toggle colour theme">
+            <svg class="icon-sun" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <circle cx="7.5" cy="7.5" r="2.6" stroke="currentColor" stroke-width="1.4"/>
+              <path d="M7.5 1.5v1.2M7.5 12.3v1.2M1.5 7.5h1.2M12.3 7.5h1.2M3.4 3.4l.85.85M10.75 10.75l.85.85M3.4 11.6l.85-.85M10.75 4.25l.85-.85" stroke="currentColor" stroke-width="1.4" stroke-linecap="round"/>
+            </svg>
+            <svg class="icon-moon" width="15" height="15" viewBox="0 0 15 15" fill="none" aria-hidden="true">
+              <path d="M12.5 9.5A5.5 5.5 0 0 1 6 3a5 5 0 1 0 6.5 6.5z" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+          </button>
+        </nav>
+      </header>
+
+      <main>
+        <article class="article-shell">
+          <p class="article-meta">Essay</p>
+          <h1>Why claims should compile</h1>
+
+          <div class="article-body">
+            <p>
+              Most claims workflows still look like a stack of rituals:
+              screenshots, PDF exports, investigator notes, threaded emails, and
+              long arguments about whether the evidence is complete. The process
+              pretends to be rigorous, but it is really a chain of manual trust.
+            </p>
+
+            <p>
+              A better model is to treat a claim like something that can
+              compile. The inputs should be structured, the rules should be
+              explicit, and the output should only exist if the evidence
+              satisfies the policy conditions. That does not remove judgment
+              from the system, but it moves judgment to the right layer: policy
+              design, data collection, and verification logic.
+            </p>
+
+            <p>
+              In cyber insurance this matters even more because the strongest
+              evidence is often the most sensitive. You cannot ask companies to
+              hand over their infrastructure every time something goes wrong.
+              The workflow has to keep raw data close to the edge and move only
+              the minimum verifiable signal upstream.
+            </p>
+
+            <p>
+              Product design changes once you accept that framing. Fewer forms.
+              Fewer explanations. More deterministic evidence handling. More
+              confidence in what a system can prove on its own. That is the
+              direction I find most interesting: less performance of trust, more
+              evidence that arrives already shaped to be checked.
+            </p>
+          </div>
+        </article>
+      </main>
+    </div>
+    <script>
+      (function () {
+        var btn = document.getElementById("theme-toggle");
+        var html = document.documentElement;
+        btn.addEventListener("click", function () {
+          var dark = html.getAttribute("data-theme") === "dark";
+          html.setAttribute("data-theme", dark ? "light" : "dark");
+          localStorage.setItem("theme", dark ? "light" : "dark");
+        });
+      })();
+    </script>
+  </body>
+</html>
